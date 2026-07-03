@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AES-GCM Badge QR Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>AES-GCM Badge QR Generator</h2>
+
+    <label for="badge">Badge Number (decimal):</label>
+    <input type="text" id="badge" placeholder="e.g. 1234" required />
+
+    <label for="interval">Refresh Interval (seconds):</label>
+    <input type="text" id="interval" placeholder="e.g. 10" required />
+
+    <label for="timeType">Time Type:</label>
+    <select id="timeType">
+      <option value="0">0 - NOT_USED</option>
+      <option value="2" selected>2 - UTC</option>
+      <option value="3">3 - LOCAL</option>
+      <option value="4">4 - LOCAL_TIME</option>
+    </select>
+
+    <div id="localTimeInputs" style="display: none;">
+      <label for="localStart">Local Start Time (HH:MM:SS):</label>
+      <input type="time" id="localStart" step="1" />
+      <label for="localEnd">Local End Time (HH:MM:SS):</label>
+      <input type="time" id="localEnd" step="1" />
+    </div>
+
+    <label for="protocolVersion">Protocol Version (0-255):</label>
+    <input type="text" id="protocolVersion" placeholder="e.g. 1" min="0" max="255" required />
+
+    <button onclick="startGenerator()">Start</button>
+
+    <canvas id="qrcodeCanvas"></canvas>
+
+    <div class="result" id="infoText"></div>
+    <div class="result" id="keyText" title="Click to copy AES key">
+      AES-128 Key     : <span id="aesKeyValue"></span>
+      <span id="copyIcon" class="copy-icon">📋</span>
+    </div>
+    <div class="result" id="ivText"></div>
+    <div class="result" id="unencryptedText"></div>
+    <div class="result" id="outputText"></div>
+    <div class="result" id="countdown"></div>
+  </div>
+
+  <script src="qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
