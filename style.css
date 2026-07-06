@@ -1,0 +1,73 @@
+* { box-sizing: border-box; }
+body {
+  font-family: system-ui, sans-serif;
+  padding: 1rem;
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #222;
+}
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  padding: 1.2rem;
+}
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+label {
+  margin-top: 1rem;
+  display: block;
+  font-weight: 600;
+}
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+button {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+button:hover {
+  background-color: #0056b3;
+}
+canvas {
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  height: auto;
+}
+.result {
+  font-family: monospace;
+  font-size: 0.95em;
+  word-break: break-word;
+  background: #f1f1f1;
+  border-radius: 6px;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  position: relative;
+  display: none;
+}
+#keyText {
+  cursor: pointer;
+}
+.copy-icon {
+  vertical-align: middle;
+  margin-left: 8px;
+}
+@media (max-width: 400px) {
+  h2 { font-size: 1.25rem; }
+  input, select, button { font-size: 0.95rem; padding: 10px; }
+  .result { font-size: 0.85rem; padding: 0.6rem; }
+}
